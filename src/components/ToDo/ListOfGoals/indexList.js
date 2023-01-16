@@ -5,7 +5,13 @@ function List({goals,setGoal}) {
   return (
     <section className="main">
         <input className="toggle-all" type="checkbox" />
-        <label htmlFor="toggle-all" >
+        <label htmlFor="toggle-all" onClick={()=>{
+          setGoal(
+            goals.map((item)=>{
+              return !item.completed ? {...item, completed: true} :item 
+            })
+          )
+        }}>
 
             Mark all as complete
         </label>
