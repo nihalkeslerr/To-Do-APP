@@ -1,13 +1,11 @@
 import React, {useState,useEffect} from 'react'
 import {} from './style.css'
 import IndexAdd from './AddSection/indexAdd'
+import List from './ListOfGoals/indexList';
+
 
 function ToDo() {
-  const [goals, setGoal]= useState([{
-    note:"Learn JavaScript"
-  }
-
-  ]);
+  const [goals, setGoal]= useState([]);
 
   useEffect(()=>{
 
@@ -16,10 +14,13 @@ function ToDo() {
   },[goals])
 
   return (
-    <div>indexGeneral
-      <IndexAdd addgoal={setGoal} goals={goals}/>
-      
+    <div>
+    <section className='todoapp'>
+        <IndexAdd addgoal={setGoal} goals={goals}/>
+        <List  setGoal={setGoal} goals={goals}/>
+       
 
+    </section>
     </div>
   )
 }

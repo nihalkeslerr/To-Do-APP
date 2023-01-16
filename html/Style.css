@@ -126,6 +126,7 @@ body {
 	width: 60px;
 	height: 34px;
 	font-size: 0;
+	content: '❯';
 	position: absolute;
 	top: -52px;
 	left: -13px;
@@ -134,7 +135,7 @@ body {
 }
 
 .toggle-all + label:before {
-	content: '❯';
+	
 	font-size: 22px;
 	color: #e6e6e6;
 	padding: 10px 27px 10px 27px;

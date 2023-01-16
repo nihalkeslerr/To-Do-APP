@@ -177,11 +177,12 @@ body {
 }
 
 .todo-list li .toggle {
-	text-align: center;
+	text-align: left;
 	width: 40px;
 	/* auto, since non-WebKit browsers doesn't support input styling */
 	height: auto;
 	position: absolute;
+	display: block;
 	top: 0;
 	bottom: 0;
 	margin: auto 0;
@@ -214,6 +215,8 @@ body {
 	display: block;
 	line-height: 1.2;
 	transition: color 0.4s;
+	text-align: left;
+	
 }
 
 .todo-list li.completed label {

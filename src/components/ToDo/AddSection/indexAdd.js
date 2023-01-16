@@ -1,11 +1,15 @@
 import { useState, useEffect } from 'react'
 
 function IndexAdd({addgoal,goals}) {
-  const [Note, setNote]= useState({note:""})
+  const [Note, setNote]= useState({note:"",completed:false})
 
   const onChangeInput=(e)=>{
     setNote({...Note, [e.target.name]: e.target.value});
   }
+
+  useEffect(()=>{
+    setNote({note:""})
+  },[goals])
 
 
 const OnSubmit=(e)=>{
@@ -22,9 +26,7 @@ const OnSubmit=(e)=>{
 }
   
   return (
-    <div>index
 
-      <section className="todoapp">
         <header className="header">
             <h1>todos</h1>
             <form onSubmit={OnSubmit}>
@@ -32,9 +34,8 @@ const OnSubmit=(e)=>{
             </form>
         </header>
     
-      
-      </section>
-    </div>
+    
+
   )
 }
 
