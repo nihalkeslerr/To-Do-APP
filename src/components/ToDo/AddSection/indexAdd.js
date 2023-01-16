@@ -4,7 +4,7 @@ function IndexAdd({addgoal,goals}) {
   const [Note, setNote]= useState({note:"",completed:false})
 
   const onChangeInput=(e)=>{
-    setNote({...Note, [e.target.name]: e.target.value});
+    setNote({...Note, [e.target.name]: e.target.value, completed:false});
   }
 
   useEffect(()=>{

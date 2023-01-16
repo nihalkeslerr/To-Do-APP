@@ -26,9 +26,6 @@ function List({goals,setGoal}) {
       setChecked({checked:false})}
   }
 
-  const destroy=(note)=>{
-    
-  }
 
   return (
     <section className="main">
@@ -57,6 +54,7 @@ function List({goals,setGoal}) {
                     }))}}/>
 
                 <label key={a}>{goal.note} </label>
+                
                 <button key={b} className="destroy" onClick={()=>{
 
                   const newlist=goals.filter((filt)=>filt.note !==goal.note)

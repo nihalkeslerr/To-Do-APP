@@ -1,13 +1,17 @@
-import React from 'react'
+import React, {useState} from 'react'
 
-function Footer() {
+function Footer({goals}) {
+    const uncompleted = goals.filter((item) => item.completed===false)
+
   return (
     <footer className="footer">
-            <span className="todo-count">
-                <strong>2 </strong>
-                 items left
+                
+            <span class="todo-count">
+                <strong>{uncompleted.length} </strong>
+                items left
             </span>
-    
+        
+
             <ul className="filters">
                 <li>
                     <a href="#/" className="selected">All</a>

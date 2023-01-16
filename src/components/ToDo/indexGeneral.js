@@ -4,13 +4,14 @@ import IndexAdd from './AddSection/indexAdd'
 import List from './ListOfGoals/indexList';
 import Footer from './Footer/indexFoot';
 
+
 function ToDo() {
   const [goals, setGoal]= useState([]);
+
 
   useEffect(()=>{
 
     console.log("Goals: ",goals);
-    
     
   },[goals])
 
@@ -19,7 +20,7 @@ function ToDo() {
     <section className='todoapp'>
         <IndexAdd addgoal={setGoal} goals={goals}/>
         <List  setGoal={setGoal} goals={goals}/>
-        <Footer/>
+        <Footer setGoal={setGoal} goals={goals}  />
        
 
     </section>
