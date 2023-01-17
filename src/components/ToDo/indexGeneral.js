@@ -6,21 +6,25 @@ import Footer from './Footer/indexFoot';
 
 
 function ToDo() {
-  const [goals, setGoal]= useState([]);
+  const [goals, setGoal]= useState([])
+  const [copygoals, setCopygoals]=useState([])
+  const [all, setAll]=useState("selected")
+  const [active, setActive]=useState()
+  const [completed,setCompleted]=useState()
 
 
   useEffect(()=>{
-
     console.log("Goals: ",goals);
-    
   },[goals])
+
 
   return (
     <div>
     <section className='todoapp'>
-        <IndexAdd addgoal={setGoal} goals={goals}/>
-        <List  setGoal={setGoal} goals={goals}/>
-        <Footer setGoal={setGoal} goals={goals}  />
+        <IndexAdd addgoal={setGoal} goals={goals} copygoals={copygoals} setCopygoals={setCopygoals} all={all} active={active} completed={completed}/>
+        <List setGoal={setGoal} goals={goals} copygoals={copygoals} setCopygoals={setCopygoals}/>
+        <Footer setGoal={setGoal} goals={goals} copygoals={copygoals} setCopygoals={setCopygoals} all={all} setAll={setAll} 
+        active={active} setActive={setActive} completed={completed} setCompleted={setCompleted}  />
        
 
     </section>
@@ -30,6 +34,7 @@ function ToDo() {
         <p>Part of <a href="http://todomvc.com">TodoMVC</a></p>
     </footer>
     </div>
+    
   )
 }
 

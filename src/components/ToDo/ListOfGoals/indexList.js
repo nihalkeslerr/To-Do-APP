@@ -1,7 +1,8 @@
 import React, {useState}from 'react'
 
 
-function List({goals,setGoal}) {
+function List({goals,setGoal,copygoals}) {
+  
   const [checked, setChecked]=useState({checked:""})
 
   const deneme=(e)=>{
@@ -40,7 +41,7 @@ function List({goals,setGoal}) {
 
         <ul className="todo-list">
         { 
-            goals.map((goal,i,j,k,a,b)=>(
+            copygoals?.map((goal,i,j,k,a,b)=>(
 
             <li key={i} className={goal.completed ? "completed" : ""}>
               <div key={j} className="view">

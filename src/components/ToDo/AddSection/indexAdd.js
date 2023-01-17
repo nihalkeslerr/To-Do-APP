@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 
-function IndexAdd({addgoal,goals}) {
+function IndexAdd({addgoal,goals,copygoals, setCopygoals,all,active,completed}) {
   const [Note, setNote]= useState({note:"",completed:false})
 
   const onChangeInput=(e)=>{
@@ -24,6 +24,23 @@ const OnSubmit=(e)=>{
     addgoal([...goals,Note])
 
 }
+useEffect(() =>{
+  if(all =="selected"){
+    let All = goals.filter(item => item);
+    setCopygoals([...All]);
+  }
+  
+  if(active == "selected"){
+    let Active = goals.filter(item =>item.isChecked === false);
+    setCopygoals([...Active]);
+  }
+  
+  if(completed == "selected"){
+    let Complete = goals.filter(item => item.isChecked === true);
+    setCopygoals([...Complete]);
+  }
+},[goals])
+
   
   return (
 
