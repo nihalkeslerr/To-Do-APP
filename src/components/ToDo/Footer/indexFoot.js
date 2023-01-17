@@ -34,7 +34,13 @@ const showCompleted=(e)=>{
     console.log("complete goals: ",copygoals)
 }
 
+const deleteallcompleted=(e)=>{
+    let deletee= goals.filter((item)=>item.completed !== true)
+    setGoal([...deletee])
+}
 
+    let hid = goals.filter((item)=> item.completed === true)
+    let conc = hid.length ? true : false
  
 
   return (
@@ -58,7 +64,7 @@ const showCompleted=(e)=>{
                     </ul>
             
     
-            <button className="clear-completed"  >
+            <button className="clear-completed" hidden={!conc} onClick={deleteallcompleted}  >
                 Clear completed
             </button>
 
