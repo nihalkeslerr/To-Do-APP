@@ -322,14 +322,15 @@ body {
 	border-color: rgba(175, 47, 47, 0.2);
 }
 
-.clear-completed,
-html .clear-completed:active {
+.clear-completed  {
 	float: right;
 	position: relative;
 	line-height: 20px;
 	text-decoration: none;
 	cursor: pointer;
 }
+
+
 
 .clear-completed:hover {
 	text-decoration: underline;

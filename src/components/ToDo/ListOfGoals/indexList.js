@@ -57,7 +57,6 @@ function List({goals,setGoal,copygoals}) {
                 <label key={a}>{goal.note} </label>
                 
                 <button key={b} className="destroy" onClick={()=>{
-
                   const newlist=goals.filter((filt)=>filt.note !==goal.note)
                   setGoal(newlist)
                 }} ></button>

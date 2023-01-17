@@ -31,12 +31,12 @@ useEffect(() =>{
   }
   
   if(active == "selected"){
-    let Active = goals.filter(item =>item.isChecked === false);
+    let Active = goals.filter(item =>item.completed === false);
     setCopygoals([...Active]);
   }
   
   if(completed == "selected"){
-    let Complete = goals.filter(item => item.isChecked === true);
+    let Complete = goals.filter(item => item.completed === true);
     setCopygoals([...Complete]);
   }
 },[goals])
