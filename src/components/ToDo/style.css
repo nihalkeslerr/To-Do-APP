@@ -425,3 +425,17 @@ meta,
 [property="todo"] .view:focus-within button {
 	display: none !important;
 }
+
+input#change {
+	border: none;
+    color: inherit;
+    font-size: inherit;
+    font-family: inherit;
+	font-weight: 300;
+	padding: 5px;
+}
+
+input#change:focus {
+    border: 1px solid #808080;
+    box-shadow: inset 0px 0px 1px 1px #d6d6d6;
+}

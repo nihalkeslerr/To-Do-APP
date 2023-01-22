@@ -5,6 +5,7 @@ function IndexAdd({addgoal,goals,copygoals, setCopygoals,all,active,completed}) 
 
   const onChangeInput=(e)=>{
     setNote({...Note, [e.target.name]: e.target.value, completed:false});
+
   }
 
   useEffect(()=>{
@@ -16,7 +17,7 @@ const OnSubmit=(e)=>{
 
     e.preventDefault();
 
-    if (Note.note == "") {
+    if (Note.note === "") {
         console.log("empty Goal");
         return false;
     }
@@ -25,17 +26,17 @@ const OnSubmit=(e)=>{
 
 }
 useEffect(() =>{
-  if(all =="selected"){
+  if(all ==="selected"){
     let All = goals.filter(item => item);
     setCopygoals([...All]);
   }
   
-  if(active == "selected"){
+  if(active === "selected"){
     let Active = goals.filter(item =>item.completed === false);
     setCopygoals([...Active]);
   }
   
-  if(completed == "selected"){
+  if(completed === "selected"){
     let Complete = goals.filter(item => item.completed === true);
     setCopygoals([...Complete]);
   }
@@ -47,7 +48,7 @@ useEffect(() =>{
         <header className="header">
             <h1>todos</h1>
             <form onSubmit={OnSubmit}>
-                <input value={Note.note} onChange={onChangeInput} name='note' className="new-todo" placeholder="What needs to be done?" autoFocus />
+                <input  value={Note.note} onChange={onChangeInput} name='note' className="new-todo" placeholder="What needs to be done?" autoFocus />
             </form>
         </header>
     
